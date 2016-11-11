@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:14:26 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/10 21:06:37 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/11 12:46:04 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ typedef	struct		s_btree
 	struct s_btree	*right;
 	void			*item;
 }					t_btree;
+void				b_tree_apply_prefix(t_btree *root, void (*applyf)(void *));
 #endif
