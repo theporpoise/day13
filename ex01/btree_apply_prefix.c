@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 21:08:08 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/11 12:46:45 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/11 12:57:58 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void btree_apply_prefix(t_btree *root, void (*applyf)(void *))
 	t_btree	*box;
 
 	box = root;
-	root->item = f(root->item);
+	box->item = f(box->item);
 	if (box->left)
 	{
-		btree_apply_prefix(box, f(*));
+		btree_apply_prefix(box->left, applyf);
 	}
 	if (box->right)
 	{
-		btree_apply_prefix(box, f(*));
+		btree_apply_prefix(box->right, applyf);
 	}
 	return ;
 }
