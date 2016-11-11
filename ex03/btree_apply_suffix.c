@@ -6,7 +6,7 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 13:10:54 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/11 13:11:10 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/11 13:46:01 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void btree_apply_suffix(t_btree *root, void (*applyf)(void *))
 	{
 		btree_apply_suffix(box->right, applyf);
 	}
-	box->item = applyf(box->item);
+	applyf(box->item);
 	return ;
 }

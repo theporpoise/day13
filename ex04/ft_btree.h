@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_apply_infix.c                                :+:      :+:    :+:   */
+/*   ft_btree.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/11 13:11:23 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/11 13:45:47 by mgould           ###   ########.fr       */
+/*   Created: 2016/11/10 20:14:26 by mgould            #+#    #+#             */
+/*   Updated: 2016/11/11 13:42:10 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#ifndef FT_BTREE_H
+# define FT_BTREE_H
 
-void btree_apply_infix(t_btree *root, void (*applyf)(void *))
+typedef	struct		s_btree
 {
-	t_btree	*box;
-
-	box = root;
-	if (box->left)
-	{
-		btree_apply_infix(box->left, applyf);
-	}
-	applyf(box->item);
-	if (box->right)
-	{
-		btree_apply_infix(box->right, applyf);
-	}
-	return ;
-}
+	struct s_btree	*left;
+	struct s_btree	*right;
+	void			*item;
+}					t_btree;
+void				btree_insert_data(t_btree **root, void *item,\
+		int (*cmpf)(void *, void *));
+t_btree				*btree_create_node(void *item);
+#endif
