@@ -6,13 +6,13 @@
 /*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 13:10:54 by mgould            #+#    #+#             */
-/*   Updated: 2016/11/11 13:46:01 by mgould           ###   ########.fr       */
+/*   Updated: 2016/11/11 17:25:24 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
 
-void btree_apply_suffix(t_btree *root, void (*applyf)(void *))
+void	btree_apply_suffix(t_btree *root, void (*applyf)(void *))
 {
 	t_btree	*box;
 
